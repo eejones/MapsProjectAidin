@@ -1,0 +1,8 @@
+= div_for place do
+  %p
+    = place.address
+  %p
+    = place.description
+  = link_to 'Show', place
+  = link_to 'Edit', edit_place_path(place)
+  = link_to 'Destroy', place_path(place), :method=> :delete, :class=>"delete", :remote => true

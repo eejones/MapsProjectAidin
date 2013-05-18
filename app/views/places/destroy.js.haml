@@ -1,0 +1,4 @@
+\/* Use fading when removing a location */
+$('#place_#{@place.id}').fadeOut();
+\/* Replace the count of places */
+$("#places_count").html("#{pluralize(Place.count, 'Place')}");

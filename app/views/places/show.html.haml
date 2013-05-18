@@ -1,0 +1,29 @@
+%p#notice= notice
+%p
+  %b Address:
+  = @place.address
+%p
+  %b Latitude:
+  = @place.latitude
+%p
+  %b Longitude:
+  = @place.longitude
+%p
+  %b Description:
+  = @place.description
+%p
+  %b Map:
+  %br/
+  = image_tag "http://maps.googleapis.com/maps/api/streetview?size=200x200&location=#{@place.latitude}%2C#{@place.longitude}&heading=235&sensor=false"
+%p
+  %b Map:
+  %br/
+  = image_tag "http://maps.googleapis.com/maps/api/staticmap?markers=#{@place.latitude}%2C#{@place.longitude}&zoom=3&size=200x200&sensor=false"
+%h2 Comments:
+= render @place.comments
+%h2 New Comment:
+= render "comments/form"
+%br/
+= link_to 'Edit', edit_place_path(@place)
+|
+=link_to 'Back', places_path

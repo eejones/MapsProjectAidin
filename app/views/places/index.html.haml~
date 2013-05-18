@@ -1,0 +1,19 @@
+%h1 Listing places
+%table
+  %tr
+    %th{:align => "left"} Address
+    %th{:align => "left"} Description
+    %th
+    %th
+    %th
+  %COLGROUP
+    %col{:width => "100"}/
+    %col{:width => "200"}/
+    %col{:width => "0*"}/
+    %col{:width => "0*"}/
+    %col{:width => "0*"}/
+
+  = render :partial => @places, :locals => { :list => true }
+%br
+
+= link_to 'New Place', new_place_path

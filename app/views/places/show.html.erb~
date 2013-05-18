@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Address:</b>
+  <%= @place.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @place.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @place.longitude %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @place.description %>
+</p>
+<p>
+  <b>Map:</b><br/>
+  <%=image_tag "http://maps.googleapis.com/maps/api/streetview?size=200x200&location=#{@place.latitude}%2C#{@place.longitude}&heading=235&sensor=false" %>
+</p>
+
+<p>
+  <b>Map:</b><br />
+  <%=image_tag "http://maps.googleapis.com/maps/api/staticmap?markers=#{@place.latitude}%2C#{@place.longitude}&zoom=3&size=200x200&sensor=false" %>
+</p>
+
+
+<h2>Comments:</h2>
+<%= render @place.comments %>
+
+<h2>New Comment:</h2>
+<%= render "comments/form" %>
+<br />
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

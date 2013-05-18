@@ -1,0 +1,14 @@
+<%= div_for place do %>
+  <p>
+    <b>Address:</b>
+    <%= place.address %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= place.description %>
+  </p>
+  <%= link_to 'Show', place %>
+  <%= link_to 'Edit', edit_place_path(place) %>
+  <%= link_to 'Destroy', place_path(place), :method=> :delete, :class=>"delete", :remote => true %>
+<% end %> 
+

@@ -1,0 +1,11 @@
+= form_for([@place, @place.comments.build], :remote => false) do |c|
+  .field
+    = c.label :commenter
+    %br/
+    = c.text_field :commenter
+  .field
+    = c.label :body
+    %br/
+    = c.text_area :body
+  .actions
+    = c.submit

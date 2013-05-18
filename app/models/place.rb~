@@ -1,0 +1,4 @@
+class Place < ActiveRecord::Base
+  attr_accessible :address, :description, :latitude, :longitude
+  after_validation :geocode, :if=> :address_changed?
+end
